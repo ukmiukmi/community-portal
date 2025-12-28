@@ -1,0 +1,190 @@
+/* ===========================
+   Edit Modal Premium Styles
+=========================== */
+
+/* Modal backdrop */
+.modal-backdrop.show {
+  opacity: 0.5 !important;
+}
+
+/* Modal dialog */
+.modal-dialog {
+  max-width: 700px;
+  margin: 3rem auto; /* pushes modal down from top */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Center modal on screen */
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+}
+
+/* Modal content */
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border: none;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Modal header */
+.modal-header {
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  color: #fff;
+  border-bottom: none;
+  padding: 1rem 1.5rem;
+  align-items: center;
+}
+
+/* Modal title */
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Modal close button - simple white X */
+.modal-header .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* white X */
+    opacity: 1;
+}
+
+.modal-header .btn-close::before,
+.modal-header .btn-close::after {
+    content: none; /* remove default pseudo-elements */
+}
+
+/* Modal body */
+.modal-body {
+  padding: 1.5rem;
+  background-color: #f7f8fa;
+}
+
+/* Form controls */
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #4b6cb7;
+  box-shadow: 0 0 0 0.2rem rgba(75, 108, 183, 0.25);
+  outline: none;
+}
+
+/* Section titles */
+.section-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #e0e0e0;
+  color: #333;
+}
+/* Custom close button with white X */
+.btn-close-custom {
+    background: none;
+    border: none;
+    color: #fff; /* white color */
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-close-custom:hover {
+    color: #f0f0f0;
+}
+
+
+/* Buttons */
+.btn-gradient,
+.btn-success,
+.btn-secondary {
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  color: #fff;
+  padding: 0.55rem 1rem;
+  border: none;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #182848, #4b6cb7);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+/* Modal footer */
+.modal-footer {
+  border-top: none;
+  padding: 1rem 1.5rem;
+  justify-content: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-dialog {
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .modal-title {
+    font-size: 1rem;
+  }
+
+  .btn-gradient {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 1rem auto;
+  }
+
+  .modal-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .modal-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra z-index for modals */
+.modal {
+  z-index: 1055; /* higher than navbar */
+}

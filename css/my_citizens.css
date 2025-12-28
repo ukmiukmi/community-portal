@@ -1,0 +1,308 @@
+/* ===== Stats Cards ===== */
+.stat-card {
+  border-radius: 16px;
+  padding: 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon-badge {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 26px;
+  opacity: .3;
+}
+
+.stat-card h4 { font-size: 36px; margin:0; }
+
+/* ===== Table ===== */
+.table-box {
+  background: #fff;
+  border-radius: 14px;
+  padding: 2px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+  overflow-x: auto;
+}
+
+tbody tr td img {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #e5e5e5;
+}
+
+/* ===== Highlight ===== */
+mark {
+  background: #fde68a;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/* ===== Search Input ===== */
+#searchInput {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+#searchInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 6px 25px rgba(59,130,246,0.25);
+}
+
+/* ===== Pagination ===== */
+.pagination a {
+  padding: 6px 13px;
+  border-radius: 8px;
+  background: #e2e8f0;
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+}
+.pagination a.active {
+  background: #3b82f6;
+  color: #fff;
+  font-weight: bold;
+}
+.pagination a:hover:not(.active) {
+  background: #93c5fd;
+  transform: translateY(-2px);
+}
+
+/* ===== Desktop Table Action Buttons Row ===== */
+td.actions {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  align-items: center;
+}
+
+td.actions .btn-edit,
+td.actions .btn-delete,
+td.actions .btn-issue-cert {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Colors and hover effects */
+td.actions .btn-edit {
+  background: #3b82f6;
+  color: #fff;
+}
+td.actions .btn-edit:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+td.actions .btn-delete {
+  background: #ef4444;
+  color: #fff;
+}
+td.actions .btn-delete:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+td.actions .btn-issue-cert {
+  background: #10b981;
+  color: #fff;
+}
+td.actions .btn-issue-cert:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+/* Icons inside buttons */
+td.actions .btn-edit i,
+td.actions .btn-delete i,
+td.actions .btn-issue-cert i {
+  font-size: 0.9rem;
+}
+
+/* ===== Badge Actions ===== */
+.badge-action {
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-right: 5px;
+  color: #fff;
+}
+.badge-action.edit {
+  background: #3b82f6;
+}
+.badge-action.edit:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+.badge-action.delete {
+  background: #ef4444;
+}
+.badge-action.delete:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+/* ===== Mobile Cards Premium ===== */
+@media(max-width:767px){
+  /* Hide table */
+  .table-box { display: none; }
+
+  #citizensCards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #citizensCards .card {
+    border-radius: 14px;
+    padding: 15px 20px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  #citizensCards .card.showCard {
+    animation: cardFadeIn 0.4s ease forwards;
+  }
+
+  #citizensCards .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+  }
+
+  #citizensCards .card-body {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  #citizensCards img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  #citizensCards .card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Labels with icons */
+  #citizensCards .card-info p {
+    margin: 3px 0;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  #citizensCards .card-info p span.label {
+    font-weight: 600;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 80px;
+  }
+
+  #citizensCards .card-info p i {
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
+  /* Badge labels for Type, Community, State */
+  .badge-label {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .badge-type { background: #3b82f6; }
+  .badge-community { background: #f59e0b; }
+  .badge-state { background: #10b981; }
+
+  /* Action buttons in a single row */
+  #citizensCards .card-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  #citizensCards .badge-action {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  @keyframes cardFadeIn {
+    0% {opacity:0; transform:translateY(20px);}
+    100% {opacity:1; transform:translateY(0);}
+  }
+}
+
+/* ===== Modal Buttons Premium ===== */
+.modal-content button {
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.modal-content .btn-secondary {
+  background: #6b7280;
+  color: #fff;
+}
+.modal-content .btn-secondary:hover {
+  background: #4b5563;
+}
+.modal-content .btn-success {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: #fff;
+}
+.modal-content .btn-success:hover {
+  background: linear-gradient(135deg, #059669, #22c55e);
+  transform: translateY(-2px);
+}
+.modal-header {
+  background: #1e293b;
+  color: #f8fafc;
+  font-weight: 700;
+  border-bottom: none;
+}
+.modal-title { font-size: 20px; }

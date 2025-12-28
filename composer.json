@@ -1,0 +1,9 @@
+{
+    "require": {
+        "mpdf/mpdf": "*",
+        "picqer/php-barcode-generator": "*",
+        "endroid/qr-code": "^6.0",
+        "dompdf/dompdf": "*",
+        "phpmailer/phpmailer": "^7.0"
+    }
+}

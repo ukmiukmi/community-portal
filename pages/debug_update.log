@@ -1,0 +1,60 @@
+POST:
+Array
+(
+    [update_id] => 1
+    [first_name] => Nweke
+    [last_name] => Amadi
+    [phone] => 070646534735
+    [citizen_type] => indigene
+    [state_of_origin] => Ebonyi
+    [community_id] => 7
+    [village_id] => 59
+    [house_address] => Nkati House Court Yard
+)
+
+FILES:
+Array
+(
+    [citizen_image] => Array
+        (
+            [name] => d7d9c4f5-9609-4305-82bd-726f183ef3f0.jpg
+            [full_path] => d7d9c4f5-9609-4305-82bd-726f183ef3f0.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpE45C.tmp
+            [error] => 0
+            [size] => 1310110
+        )
+
+)
+
+------------------------------------------
+POST:
+Array
+(
+    [update_id] => 1
+    [first_name] => Nweke
+    [last_name] => Amadi
+    [phone] => 070646534735
+    [citizen_type] => indigene
+    [state_of_origin] => Ebonyi
+    [community_id] => 7
+    [village_id] => 59
+    [house_address] => Nkati House Court Yard
+)
+
+FILES:
+Array
+(
+    [citizen_image] => Array
+        (
+            [name] => d7d9c4f5-9609-4305-82bd-726f183ef3f0.jpg
+            [full_path] => d7d9c4f5-9609-4305-82bd-726f183ef3f0.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpE45B.tmp
+            [error] => 0
+            [size] => 1310110
+        )
+
+)
+
+------------------------------------------

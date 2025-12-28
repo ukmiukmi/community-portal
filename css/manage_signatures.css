@@ -1,0 +1,366 @@
+/* ------------------------------------------------------------
+   VARIABLES
+------------------------------------------------------------ */
+:root {
+    --primary: #0a501c;
+    --primary-dark: #084218;
+    --success: #198754;
+    --success-dark: #157347;
+    --danger: #dc3545;
+    --danger-dark: #b02a37;
+    --bg-light: #f8fafc;
+    --bg-card: #fff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border-light: #cbd5e1;
+}
+
+/* ------------------------------------------------------------
+   GLOBAL
+------------------------------------------------------------ */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f5f7fa;
+    padding: 20px;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 28px;
+}
+
+/* ------------------------------------------------------------
+   COMMUNITY SELECT
+------------------------------------------------------------ */
+.community-select {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 35px auto;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    background: var(--bg-light);
+}
+
+/* ------------------------------------------------------------
+   SIGNATURE GRID
+------------------------------------------------------------ */
+.sig-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* ------------------------------------------------------------
+   SIG CARD INTERNAL LAYOUT
+------------------------------------------------------------ */
+.sig-card {
+    display: grid;
+    grid-template-rows:
+        auto   /* Role title */
+        1fr    /* Signature preview */
+        auto   /* Drop zone */
+        auto   /* Upload/Delete buttons */
+        auto   /* Digital canvas & buttons */
+        ;
+    gap: 12px;
+    padding: 20px;
+    background: var(--bg-card);
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.sig-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 26px rgba(0,0,0,0.10);
+}
+
+.sig-role {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* ------------------------------------------------------------
+   SIGNATURE PREVIEW FIXED
+------------------------------------------------------------ */
+.sig-preview {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* remove any background color */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px dashed #94a3b8;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.sig-preview div { /* wrapper inside preview */
+    position: relative;
+    width: auto;      /* allow image to define width */
+    height: auto;     /* allow image to define height */
+    max-width: 100%;
+    max-height: 100%;
+    background: transparent; /* transparent wrapper */
+}
+
+.sig-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;  /* preserve aspect ratio */
+    display: block;
+    z-index: 1;
+    background: transparent; /* ensure no background */
+}
+
+.sig-preview .updated {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(255, 255, 255, 0.7); /* semi-transparent */
+    padding: 3px 6px;
+    font-size: 11px;
+    border-radius: 6px;
+    color: var(--text-muted);
+    z-index: 2;
+}
+
+.sig-preview .remove-preview {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: var(--danger);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 3;
+}
+
+
+/* ------------------------------------------------------------
+   REMOVE / CLOSE BUTTON
+------------------------------------------------------------ */
+.sig-preview .remove-preview {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: var(--danger);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+.sig-preview .remove-preview:hover {
+    background: var(--danger-dark);
+    transform: scale(1.1);
+}
+
+/* ------------------------------------------------------------
+   DRAG & DROP
+------------------------------------------------------------ */
+.drop-zone {
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #334155;
+    background: var(--bg-light);
+    border: 2px dashed var(--primary);
+    transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.drop-zone.dragover {
+    background: rgba(10,80,28,0.05);
+    border-color: var(--primary);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ------------------------------------------------------------
+   BUTTONS
+------------------------------------------------------------ */
+.btn {
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background .2s ease;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.btn:hover { background: var(--primary-dark); }
+
+.btn.delete,
+.btn.delete-digital { background: var(--danger); }
+.btn.delete:hover,
+.btn.delete-digital:hover { background: var(--danger-dark); }
+
+.btn.save-digital { background: var(--success); }
+.btn.save-digital:hover { background: var(--success-dark); }
+
+/* ------------------------------------------------------------
+   DIGITAL CANVAS
+------------------------------------------------------------ */
+.digital-canvas {
+    width: 100%;
+    height: 120px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: var(--bg-light);
+    touch-action: none;
+}
+
+/* Color Picker */
+.color-picker {
+    margin-bottom: 8px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+}
+
+/* ------------------------------------------------------------
+   UPLOAD ALL PANEL
+------------------------------------------------------------ */
+.upload-all {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.upload-all input[type=file] {
+    margin: 8px;
+}
+
+.preview-pair img {
+    max-width: 160px;
+    max-height: 90px;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    margin: 5px;
+    position: relative;
+}
+
+/* Remove button for pair previews */
+.preview-pair .remove-preview {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: var(--danger);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+.preview-pair .remove-preview:hover {
+    background: var(--danger-dark);
+    transform: scale(1.1);
+}
+
+/* ------------------------------------------------------------
+   LOADER
+------------------------------------------------------------ */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------ */
+@media(max-width: 768px) {
+    .container { padding: 15px; }
+    h2 { font-size: 24px; }
+    .sig-preview { height: 140px; }
+    .digital-canvas { height: 100px; }
+    .upload-all .drop-zone { width: 48%; margin-bottom: 12px; display: inline-block; }
+}
+
+@media(max-width: 480px) {
+    .sig-preview { height: 120px; }
+    .digital-canvas { height: 80px !important; }
+    .btn { width: 100%; text-align: center; }
+    .upload-all .drop-zone { width: 100%; margin-bottom: 10px; display: block; }
+    .upload-all .preview-pair img { max-width: 100px; max-height: 60px; }
+    .upload-all button#uploadBothBtn { width: 100%; padding: 12px; font-size: 15px; }
+}
+
+/* ------------------------------------------------------------
+   TOAST ALERTS (SweetAlert2)
+------------------------------------------------------------ */
+.swal2-container { z-index: 99999 !important; }
+
+.swal2-popup.swal2-toast {
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+}
+
+.swal2-popup.swal2-toast .swal2-title {
+    margin: 0;
+    font-weight: 600;
+    color: #fff;
+}
+
+.swal2-popup.swal2-toast.swal2-success { background-color: var(--success) !important; }
+.swal2-popup.swal2-toast.swal2-error { background-color: var(--danger) !important; }
+.swal2-popup.swal2-toast.swal2-warning { background-color: #ffc107 !important; color: #000 !important; }
+.swal2-popup.swal2-toast.swal2-info { background-color: #0d6efd !important; }
+
+.swal2-popup.swal2-toast.show { animation: slideIn 0.4s ease-out; }
+
+@keyframes slideIn {
+    0% { transform: translateX(100%) translateY(0); opacity: 0; }
+    100% { transform: translateX(0) translateY(0); opacity: 1; }
+}

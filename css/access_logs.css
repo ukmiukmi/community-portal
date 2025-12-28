@@ -1,0 +1,202 @@
+/* ----------------------------
+   Access Logs Page Styling
+-----------------------------*/
+
+/* Container */
+.access-logs-container {
+    background: rgba(255,255,255,0.02);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Header */
+.access-logs-container h2, .access-logs-container h3 {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #4d63ff;
+}
+
+/* Buttons */
+.access-logs-btn, #selectAllPages, #selectCurrentPage, #exportLogs, #deleteLogs, #restoreBtn {
+    background: #4d63ff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.access-logs-btn:hover, #selectAllPages:hover, #selectCurrentPage:hover, #exportLogs:hover, #restoreBtn:hover {
+    background: #6a84ff;
+    box-shadow: 0 6px 18px rgba(77,99,255,0.35), 0 0 6px rgba(77,99,255,0.2);
+}
+
+#deleteLogs:hover {
+    background: #d33 !important;
+    box-shadow: 0 6px 18px rgba(211,51,51,0.35), 0 0 6px rgba(211,51,51,0.2);
+}
+
+.access-logs-btn:disabled, #restoreBtn:disabled {
+    background: rgba(77,99,255,0.3);
+    cursor: not-allowed;
+}
+
+/* Table */
+#logsTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#logsTable th, #logsTable td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#logsTable th {
+    background: rgba(77,99,255,0.15);
+    color: #fff;
+    font-weight: 600;
+}
+
+#logsTable tr:nth-child(even) {
+    background: rgba(255,255,255,0.04);
+}
+
+#logsTable tr:hover {
+    background: rgba(77,99,255,0.08);
+}
+
+/* Deleted / Restored Row Styling */
+.deleted-row {
+    background-color: #f8d7da !important;
+    color: #721c24;
+}
+
+.restored-highlight {
+    background-color: #d4edda !important;
+    transition: background-color 1s ease;
+}
+
+.deleted-highlight {
+    background-color: #f8d7da !important;
+    transition: background-color 1s ease;
+}
+
+/* Deleted Badge */
+.deleted-badge {
+    font-size: 0.75rem;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/* Highlighted Search Term */
+.highlight-target b, .highlighted-term {
+    font-weight: 700;
+    background: yellow;
+    color: #000;
+}
+
+/* Checkboxes */
+.logCheckbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #4d63ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#selectAll {
+    accent-color: #4d63ff;
+}
+
+/* Selected Row Glow */
+#logsTable tr.selected {
+    background: linear-gradient(135deg,#4d63ff,#6e8dff);
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(77,99,255,0.35), 0 0 6px rgba(77,99,255,0.2);
+    transition: all 0.4s ease;
+}
+
+/* Role Badges */
+.badge {
+    font-size: 0.85rem;
+    padding: 0.35em 0.6em;
+    border-radius: 0.35rem;
+    transition: all 0.3s ease;
+}
+
+.bg-danger { background-color: #d33 !important; }
+.bg-warning { background-color: #ffc107 !important; color: #212529 !important; }
+.bg-info { background-color: #17a2b8 !important; color: #212529 !important; }
+.bg-secondary { background-color: #6c757d !important; }
+
+/* Badge Hover Glow */
+#logsTable .badge:hover {
+    box-shadow: 0 4px 12px rgba(77, 99, 255, 0.35), 0 0 6px rgba(77, 99, 255, 0.2);
+    transform: translateY(-2px);
+    cursor: default;
+}
+
+/* User Agent Tooltip Cursor */
+#logsTable td[title] {
+    cursor: help;
+}
+
+#logsTable td[title]:hover {
+    box-shadow: inset 0 0 10px rgba(77,99,255,0.15);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Table Scroll Wrapper */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(77,99,255,0.3);
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(77,99,255,0.5);
+}
+
+/* SweetAlert Toast Z-Index */
+.swal-toast-container {
+  z-index: 99999 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #logsTable th, #logsTable td {
+        font-size: 12px;
+        padding: 10px 8px;
+    }
+
+    .access-logs-btn, #selectAllPages, #selectCurrentPage, #exportLogs, #deleteLogs, #restoreBtn {
+        padding: 6px 12px;
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+}

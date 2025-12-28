@@ -1,0 +1,133 @@
+/* ===================================== */
+/* PAGE CONTAINER & HEADER */
+/* ===================================== */
+.page-container {
+    padding: 20px;
+}
+
+.page-header {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* ===================================== */
+/* SEARCH, FILTER & ADD BUTTON */
+/* ===================================== */
+.search-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-filter-row input,
+.search-filter-row select {
+    flex: 1 1 auto;
+    min-width: 120px;
+}
+
+.add-btn {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.add-btn:hover {
+    background-color: #0b5ed7;
+    color: #fff;
+}
+
+/* ===================================== */
+/* TABLE HOVER & SEARCH HIGHLIGHT */
+/* ===================================== */
+.search-highlight {
+    background-color: yellow;
+    color: black;
+    font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* ===================================== */
+/* VILLAGE CARDS (MOBILE) */
+/* ===================================== */
+#villageCards {
+    display: flex;
+    flex-wrap: nowrap; /* single row */
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.village-card {
+    background-color: #fff;
+    min-width: 250px; /* adjust as needed */
+    flex: 0 0 auto; /* prevent shrinking */
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+.village-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.village-card h5,
+.village-card .badge {
+    word-break: break-word;   /* wrap long text */
+    white-space: normal;
+    max-width: 100%;
+}
+
+/* ===================================== */
+/* MODAL CENTERING */
+/* ===================================== */
+#addEditVillageModal .modal-dialog {
+    margin-top: 80px; /* keep below navbar */
+}
+
+#addEditVillageModal .modal-content {
+    border-radius: 0.5rem;
+}
+
+/* ===================================== */
+/* TOAST MESSAGES (ABOVE NAVBAR) */
+/* ===================================== */
+.toast-container {
+    top: 60px !important; /* below navbar height */
+    right: 20px !important;
+    z-index: 2000 !important;
+}
+
+/* ===================================== */
+/* SORT ICONS */
+/* ===================================== */
+.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.sortable i {
+    margin-left: 5px;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+/* ===================================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ===================================== */
+@media (max-width: 767px) {
+    #villageSearch {
+        max-width: 100%;
+    }
+    .add-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    /* Ensure cards remain in a single row on small screens */
+    #villageCards {
+        gap: 10px;
+    }
+}

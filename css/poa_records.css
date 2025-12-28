@@ -1,0 +1,284 @@
+/* ---------------- GENERAL ---------------- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #1f2937;
+}
+
+h2, h4, h6 {
+  margin: 0;
+}
+
+/* ---------------- INPUTS & FILTERS ---------------- */
+input.form-control,
+select.form-select {
+  border-radius: 50px;
+  height: 42px;
+  border: 1px solid #d1d5db;
+  padding: 0 15px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  background-color: #ffffff;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.25);
+  outline: none;
+}
+
+input::placeholder {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Month input placeholder for mobile */
+@media (max-width: 767.98px) {
+  input[type="month"]::-webkit-datetime-edit-text { color: #6b7280; }
+  input[type="month"]::-webkit-datetime-edit-month-field { color: #6b7280; }
+  input[type="month"]::-webkit-datetime-edit-year-field { color: #6b7280; }
+}
+
+/* ---------------- STATS CARDS (GLASS-MORPHISM WITH STRONGER COLOR) ---------------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#statsCards .card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(59,130,246,0.6), rgba(37,99,235,0.6));
+  background-size: 200% 200%;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.5s ease;
+  animation: fadeInUp 0.5s ease both;
+}
+
+#statsCards .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  animation: gradientShift 6s ease infinite;
+  background-size: 200% 200%;
+}
+
+#statsCards .card::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* Different gradients per card */
+#statsCards .col-md-3:nth-child(1) .card { background: linear-gradient(135deg, rgba(59,130,246,0.6), rgba(37,99,235,0.6)); }
+#statsCards .col-md-3:nth-child(2) .card { background: linear-gradient(135deg, rgba(16,185,129,0.6), rgba(5,150,105,0.6)); }
+#statsCards .col-md-3:nth-child(3) .card { background: linear-gradient(135deg, rgba(234,179,8,0.6), rgba(202,138,4,0.6)); }
+#statsCards .col-md-3:nth-child(4) .card { background: linear-gradient(135deg, rgba(239,68,68,0.6), rgba(220,38,38,0.6)); }
+
+#statsCards h6 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+
+#statsCards h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+#statsCards .amount {
+  color: #ffffff !important;
+  font-size: 1.9rem !important;
+  font-weight: 900 !important;
+}
+
+/* ---------------- TABLE ---------------- */
+.desktop-table .table th,
+.desktop-table .table td {
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+.desktop-table .table th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+}
+
+.desktop-table .table tbody tr {
+  background-color: #ffffff;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.desktop-table .table tbody tr:hover {
+  background-color: #f1f5f9;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.03);
+  border-radius: 0.5rem;
+}
+
+/* ---------------- BADGES ---------------- */
+.badge-community {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  background-color: #e0e7ff;
+  color: #1e3a8a;
+}
+
+.badge-amount {
+  padding: 0.25em 0.6em;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.badge-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-warning {
+  background-color: #fef9c3;
+  color: #78350f;
+}
+
+.badge-danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* ---------------- MOBILE CARDS ---------------- */
+#tableBodyMobile .card {
+  border-radius: 1.2rem;
+  background: #ffffff;
+  padding: 1.2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#tableBodyMobile .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+#tableBodyMobile h6 {
+  font-size: 1.1rem;
+  color: #0d6efd;
+  font-weight: 700;
+}
+
+#tableBodyMobile p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+#tableBodyMobile .badge-community {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+#tableBodyMobile .badge-amount {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ---------------- CHECKBOXES ---------------- */
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0d6efd;
+  cursor: pointer;
+}
+
+/* ---------------- BULK ACTIONS ---------------- */
+.mb-3 .btn {
+  border-radius: 50px;
+  height: 40px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.mb-3 .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* ---------------- PAGINATION ---------------- */
+.pagination {
+  margin: 0;
+}
+
+.pagination .page-item .page-link {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  line-height: 28px;
+  text-align: center;
+  padding: 0;
+  font-size: 0.85rem;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  transition: all 0.2s;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #ffffff;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (min-width: 768px) {
+  #tableBodyMobile {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .desktop-table {
+    display: none;
+  }
+
+  /* Smaller glass-morphism stats cards on mobile */
+  #statsCards .col-md-3 {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+
+  #statsCards .card {
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  #statsCards h6 {
+    font-size: 0.7rem;
+  }
+
+  #statsCards h4 {
+    font-size: 1.25rem;
+  }
+}

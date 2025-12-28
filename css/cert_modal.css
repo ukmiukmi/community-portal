@@ -1,0 +1,166 @@
+/* ===========================
+   Cert Modal Premium Styles (Optimized)
+=========================== */
+
+/* Modal backdrop */
+.modal-backdrop.show {
+  opacity: 0.5 !important;
+}
+
+/* Modal dialog */
+.modal-dialog {
+  max-width: 700px;
+  margin: 3rem auto;
+  transition: all 0.3s ease-in-out;
+  z-index: 1055; /* higher than navbar */
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 2rem);
+}
+
+/* Modal content */
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border: none;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Modal header */
+.modal-header {
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  color: #fff;
+  border-bottom: none;
+  padding: 0.9rem 1.2rem; /* slightly smaller for neatness */
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Modal close button as white X */
+.modal-header .btn-close {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff; /* white X */
+  opacity: 1;
+}
+
+.modal-header .btn-close::before,
+.modal-header .btn-close::after {
+  content: none; /* remove default pseudo-elements */
+}
+
+/* Modal body */
+.modal-body {
+  padding: 1.2rem 1.5rem; /* slightly tighter padding for a premium look */
+  background-color: #f7f8fa;
+}
+
+/* Section titles */
+.section-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #e0e0e0;
+  color: #333;
+}
+
+/* Form controls */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  padding: 0.45rem 0.75rem; /* slightly smaller */
+  transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #4b6cb7;
+  box-shadow: 0 0 0 0.15rem rgba(75, 108, 183, 0.25);
+  outline: none;
+}
+
+/* Gradient submit button */
+.btn-gradient {
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem; /* slightly smaller */
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #182848, #4b6cb7);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================
+   Responsive adjustments
+====================== */
+@media (max-width: 768px) {
+  .modal-dialog {
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .modal-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .btn-gradient {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-dialog {
+    max-width: 95%;
+    margin: 1rem auto;
+  }
+
+  .modal-header {
+    padding: 0.7rem 0.9rem;
+  }
+
+  .modal-title {
+    font-size: 1rem;
+  }
+
+  .btn-gradient {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .modal-body {
+    padding: 0.9rem 1rem;
+  }
+}

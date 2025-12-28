@@ -1,0 +1,85 @@
+/* issue_land_poa.css - form styles */
+
+.form-container {
+    width: 100%;
+    max-width: 760px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    box-sizing: border-box;
+}
+
+.form-container h2 {
+    margin: 0 0 16px 0;
+    text-align: center;
+    color: #0ea5e9;
+    font-size: 1.4rem;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+input:focus, select:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 6px rgba(14,165,233,0.18);
+    outline: none;
+}
+
+input.disabled {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.two-col {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.two-col > div { flex: 1 1 100%; }
+
+button#poaSubmit {
+    margin-top: 18px;
+    padding: 12px 16px;
+    width: 100%;
+    background: linear-gradient(90deg,#10b981,#059669);
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+button#poaSubmit:hover { transform: translateY(-2px); }
+
+@media (min-width: 700px) {
+    .two-col > div { flex: 1; }
+}
+
+@media (max-width: 600px) {
+    .form-container { padding: 14px; margin: 12px; }
+    .two-col { flex-direction: column; gap: 10px; }
+}

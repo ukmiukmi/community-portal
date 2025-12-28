@@ -1,0 +1,161 @@
+/* ============================ */
+/* GLOBAL STYLES */
+/* ============================ */
+body { font-family:"Inter",sans-serif; background:#f4f6f9; margin:0; padding:0; color:#333; }
+.page-container { padding:25px; }
+.page-header { font-size:28px; font-weight:700; color:#2c3e50; margin-bottom:25px; }
+
+/* ============================ */
+/* TABLE STYLES */
+/* ============================ */
+.table-container { background:#fff; border-radius:14px; padding:25px; box-shadow:0 6px 20px rgba(0,0,0,0.08); overflow-x:auto; }
+table { width:100%; border-collapse:collapse; margin-top:10px; }
+table thead { background:#1e3a8a; color:#fff; }
+table thead th { padding:14px; font-weight:600; font-size:14px; }
+table tbody td { padding:14px; border-bottom:1px solid #eee; font-size:14px; }
+table tbody tr:hover { background:#f0f4ff; transition:0.25s; }
+.action-buttons { display:flex; gap:8px; align-items:center; }
+
+/* ============================ */
+/* BUTTONS */
+/* ============================ */
+.btn { padding:8px 16px; border-radius:8px; border:none; cursor:pointer; font-size:14px; font-weight:600; transition:0.25s ease; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+.btn-primary { background:#0066ff; color:#fff; } 
+.btn-primary:hover { background:#0050cc; }
+.btn-warning { background:#f1c40f; color:#fff; } 
+.btn-warning:hover { background:#d4a90b; }
+.btn-danger { background:#e74c3c; color:#fff; } 
+.btn-danger:hover { background:#c0392b; }
+.add-btn { margin-bottom:20px; background:#00b894 !important; color:#fff !important; box-shadow:0 4px 12px rgba(0,0,0,0.12); } 
+.add-btn:hover { background:#009c7f !important; }
+
+/* ============================ */
+/* PAGINATION */
+/* ============================ */
+.pagination { margin-top:20px; display:flex; gap:6px; justify-content:center; }
+.pagination li { list-style:none; }
+.pagination button, .pagination .page-link { padding:8px 14px; border-radius:8px; background:#ecf0f1; border:1px solid #d0d7df; cursor:pointer; font-weight:600; transition:0.2s; }
+.pagination button.active, .pagination .page-item.active .page-link { background:#0066ff; color:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.12); }
+.pagination button:hover, .pagination .page-link:hover { background:#d0e2ff; }
+
+/* ============================ */
+/* MODAL STYLES (RESPONSIVE) */
+/* ============================ */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050; /* above navbar */
+}
+
+.modal-box {
+    background: #fff;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh; /* fit viewport */
+    overflow: hidden;
+    animation: fadeIn 0.25s ease-out;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 1060;
+}
+
+.modal-header {
+    padding: 18px 22px;
+    background: #0066ff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    flex-shrink: 0; /* fixed height */
+}
+
+.modal-body {
+    padding: 22px;
+    overflow-y: auto; /* scroll if content too tall */
+    flex-grow: 1;
+}
+
+.modal-footer {
+    padding: 16px 22px;
+    flex-shrink: 0;
+    border-top: 1px solid #eee;
+    background: #fff;
+}
+
+.close-modal {
+    position:absolute;
+    right:18px; top:14px;
+    cursor:pointer;
+    font-size:22px;
+    color:#fff;
+}
+
+/* ============================ */
+/* FORM STYLES */
+/* ============================ */
+.form-group { margin-bottom:18px; }
+.form-group label { display:block; font-size:14px; margin-bottom:8px; font-weight:600; color:#2d3436; }
+.form-group input, .form-group textarea { width:100%; padding:12px 14px; border-radius:10px; border:1px solid #d0d7df; font-size:14px; transition:0.2s; }
+.form-group input:focus, .form-group textarea:focus { border-color:#0066ff; box-shadow:0 0 8px rgba(0,102,255,0.2); }
+textarea { height:90px; resize:none; }
+input[type="file"] { padding:5px; }
+.image-preview { width:90px; height:90px; border:1px solid #ddd; border-radius:10px; margin-top:8px; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+.save-btn { width:100%; padding:12px; border-radius:10px; background:#0066ff; color:#fff; font-size:16px; cursor:pointer; border:none; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.12); } 
+.save-btn:hover { background:#0050cc; }
+
+/* ============================ */
+/* MOBILE CARDS */
+/* ============================ */
+.community-card { background:#fff; border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.08); padding:18px; transition:0.25s; }
+.community-card:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.12); }
+.community-card img { border-radius:8px; }
+.community-card .badge { display:inline-block; background:#0066ff; color:#fff; padding:3px 8px; font-size:12px; font-weight:600; border-radius:8px; margin-right:6px; }
+
+/* ============================ */
+/* MOBILE PAGINATION */
+#mobilePagination li { list-style:none; display:inline-block; margin:2px; }
+#mobilePagination .page-link { padding:8px 12px; border-radius:8px; background:#ecf0f1; border:1px solid #d0d7df; cursor:pointer; font-weight:600; }
+#mobilePagination .page-item.active .page-link { background:#0066ff; color:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.12); }
+#mobilePagination .page-link:hover { background:#d0e2ff; }
+
+/* ============================ */
+/* ANIMATION */
+@keyframes fadeIn { from { transform:scale(0.95); opacity:0; } to { transform:scale(1); opacity:1; } }
+
+/* ============================ */
+/* SWEETALERT2 FIXES */
+.swal2-container { z-index: 99999 !important; }
+.swal2-toast { font-size: 14px; }
+
+/* ============================ */
+/* BODY FIXES FOR MOBILE */
+@media (max-width: 576px) {
+    .modal-box { width: 95%; }
+    table thead { font-size: 12px; }
+    table tbody td { font-size: 12px; padding:10px; }
+    .btn { font-size:12px; padding:6px 12px; }
+    .form-group input, .form-group textarea { font-size:12px; padding:10px; }
+    .save-btn { font-size:14px; padding:10px; }
+}
+
+/* ============================ */
+/* SEARCH HIGHLIGHT STYLES */
+/* ============================ */
+.highlighted {
+    background-color: yellow;
+    font-weight: bold;
+    transition: background-color 1s ease;
+}
+
+.highlighted.fade-out {
+    background-color: transparent;
+}

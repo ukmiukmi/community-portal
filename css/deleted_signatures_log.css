@@ -1,0 +1,99 @@
+/* ----------------------------------------------------
+   TABLE BASE STYLES
+---------------------------------------------------- */
+table { @apply w-full border-collapse; }
+th, td { @apply px-3 py-2 text-left align-middle; }
+thead th { @apply bg-gray-100 font-semibold text-xs tracking-wider uppercase; }
+tbody tr:hover { @apply bg-gray-50; }
+
+/* ----------------------------------------------------
+   SIGNATURE THUMBNAILS
+---------------------------------------------------- */
+.thumb { @apply rounded-md h-10 w-10 object-cover cursor-pointer transition-transform duration-200 ease-in-out; }
+.thumb:hover { @apply scale-110; }
+
+/* ----------------------------------------------------
+   RESTORE BUTTON
+---------------------------------------------------- */
+.restore-btn { @apply transition duration-200 ease-in-out; }
+.restore-btn:hover { @apply -translate-y-0.5; }
+button[disabled] { @apply opacity-60 cursor-not-allowed; }
+
+/* ----------------------------------------------------
+   SELECT ALL CHECKBOX
+---------------------------------------------------- */
+#selectAll { accent-color: #3b82f6; }
+#selectAll:disabled { @apply opacity-60 cursor-not-allowed; }
+
+/* ----------------------------------------------------
+   PAGINATION
+---------------------------------------------------- */
+#paginationWrap { @apply flex justify-center mt-6; }
+#paginationWrap ul { @apply flex gap-2; }
+#paginationWrap ul li button { @apply px-3 py-1.5 rounded-md border border-gray-300 text-sm bg-white transition-colors; }
+#paginationWrap ul li button:hover { @apply bg-gray-200; }
+#paginationWrap ul li button.bg-blue-600 { @apply text-white; }
+#paginationWrap ul li button:disabled { @apply opacity-50 cursor-not-allowed; }
+
+/* ----------------------------------------------------
+   STATS CARDS
+---------------------------------------------------- */
+.stats-box { @apply bg-white rounded-lg p-4 shadow; }
+.stats-box h6 { @apply text-xs text-gray-500 mb-1; }
+.stats-box div { @apply text-2xl font-bold; }
+
+/* ----------------------------------------------------
+   FILTER INPUTS
+---------------------------------------------------- */
+#filterForm select, #filterForm input[type="date"] { @apply border border-gray-300 rounded-md px-3 py-2 text-sm bg-white transition-colors; }
+#filterForm select:focus, #filterForm input[type="date"]:focus { @apply outline-none border-blue-500 ring-2 ring-blue-300; }
+
+/* ----------------------------------------------------
+   SEARCH INPUT
+---------------------------------------------------- */
+#searchInput { @apply w-full max-w-xs border border-gray-300 rounded-md px-3 py-2 text-sm transition-colors; }
+#searchInput:focus { @apply outline-none border-blue-500 ring-2 ring-blue-300; }
+
+/* ----------------------------------------------------
+   BULK ACTION BUTTONS
+---------------------------------------------------- */
+#bulk-delete, #bulk-download, #bulk-zip, a[href*="export_csv"] { @apply transition-transform duration-200; }
+#bulk-delete:hover, #bulk-download:hover, #bulk-zip:hover, a[href*="export_csv"]:hover { @apply -translate-y-0.5; }
+#bulk-delete[disabled], #bulk-download[disabled], #bulk-zip[disabled] { @apply opacity-50 cursor-not-allowed; }
+
+/* ----------------------------------------------------
+   RESTORED ROW ANIMATION
+---------------------------------------------------- */
+.restored-highlight { animation: restoredFlash 1.2s ease; }
+@keyframes restoredFlash { 0%{background-color:#d1fae5;} 50%{background-color:#f0fdf4;} 100%{background-color:transparent;} }
+
+/* ----------------------------------------------------
+   RESPONSIVE TABLE WRAP
+---------------------------------------------------- */
+@media (max-width:768px){.table-container{@apply overflow-x-auto;} th, td{@apply whitespace-nowrap;}}
+
+/* ----------------------------------------------------
+   MODAL BACKDROP (Image Zoom)
+   Fade-in/fade-out + scale animation
+---------------------------------------------------- */
+#signatureModal {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 9999;
+}
+#signatureModal.show { opacity: 1; pointer-events: auto; }
+
+/* ----------------------------------------------------
+   MODAL CONTENT
+---------------------------------------------------- */
+#modalImageWrap {
+  @apply bg-white p-4 rounded-lg shadow-xl max-w-4xl max-h-[90vh] overflow-hidden relative;
+  transform: scale(0.95); opacity: 0; transition: all 0.25s ease;
+}
+#signatureModal.show #modalImageWrap { transform: scale(1); opacity: 1; }
+#modalImage { @apply max-h-[85vh] rounded-md mx-auto cursor-zoom-out select-none; }
+#modalClose { @apply absolute top-2 right-2 text-gray-600 hover:text-black cursor-pointer text-2xl font-bold; }
+
+/* ----------------------------------------------------
+   MOBILE CLICKABILITY FIX
+---------------------------------------------------- */
+#modalImageWrap, #modalClose, #modalImage { touch-action: manipulation; }
